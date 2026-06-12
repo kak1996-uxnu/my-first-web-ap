@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>けいちゃん</title>
-    <style>
-        body {
-            background-color: #FFFDD0; /* クリーム色 */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px;
-        }
+<meta charset="UTF-8">
+<title>けいちゃん</title>
 
-        h1 {
-            text-align: center; /* タイトルを中央に */
-            color: skyblue; /* 水色 */
-        }
-
-        ul {
-            max-width: 400px;
-            margin: 30px auto;
-            font-size: 18px;
-        }
-
-        body {
+<style>
+body {
     background-color: #FFFDD0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    text-align: center; /* ← 全体中央 */
 }
 
 h1 {
-    text-align: center;
     color: skyblue;
 }
 
-/* 点滅用 */
+/* 点滅 */
 .blink {
-    .blink {
     animation: blink 8s infinite;
 }
 
@@ -43,56 +27,23 @@ h1 {
         opacity: 0;
     }
 }
+
+/* タップ項目 */
+.item {
+    background-color: #E0F7FA;
+    width: 300px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
 }
-</style>
-</head>
-<body>
 
-<h1 class="blink">けいちゃんのホームページ</h1>
-
-
-
-    </style>
-</head>
-<body>
-
-
-
-   <div class="item" onclick="toggle('profile')">
-    👤 自己紹介
-    <div id="profile" class="content">
-        今、おうちでHPを作ってみたよよよん
-    </div>
-</div>
-
-<div class="item" onclick="toggle('hobby')">
-    🎮 趣味
-    <div id="hobby" class="content">
-        スンスンをみること
-    </div>
-</div>
-
-<div class="item" onclick="toggle('food')">
-    🍜 好きな食べ物
-    <div id="food" class="content">
-        高いお肉
-    </div>
-</div>
-
-<script>
-function toggle(id) {
-    const element = document.getElementById(id);
-
-    if (element.style.display === "block") {
-        element.style.display = "none";
-    } else {
-        element.style.display = "block";
-    }
+.content {
+    display: none;
+    margin-top: 10px;
 }
-</script>
-<button class="btn">クリックするとオレンジ色なるよ！</button>
 
-<style>
+/* ボタン */
 .btn {
     background-color: skyblue;
     color: white;
@@ -106,6 +57,59 @@ function toggle(id) {
     background-color: orange;
 }
 </style>
+</head>
+
+<body>
+
+<h1 class="blink">けいちゃんのホームページ</h1>
+
+<div class="item" onclick="toggle('profile')">
+    😎 自己紹介
+    <div id="profile" class="content">
+        今、おうちでHPを作ってみたよよよん
+    </div>
+</div>
+
+<div class="item" onclick="toggle('hobby')">
+    🧸 趣味
+    <div id="hobby" class="content">
+        スンスンを嗜むこと
+    </div>
+</div>
+
+<div class="item" onclick="toggle('food')">
+    🐅 好きな食べ物
+    <div id="food" class="content">
+        高いお肉
+    </div>
+</div>
+
+<div class="item" onclick="toggle('book')">
+    📚 好きな本
+    <div id="food" class="content">
+        谷川俊太郎のからだに従う
+    </div>
+</div>
+
+
+<button class="btn">クリックするとオレンジ色なるよ！</button>
+
+<p onclick="this.innerHTML = this.innerHTML === '🤐けいちゃんの知恵袋' ? '私はプログラミングを勉強しています！' : '👤 自己紹介'">
+    👤 自己紹介
+</p>
+
+<script>
+function toggle(id) {
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    } else {
+        element.style.display = "block";
+    }
+}
+</script>
+
 </body>
 </html>
 
