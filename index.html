@@ -101,12 +101,6 @@ h1 {
 }
 </style>
 
-<div class="item" onclick="toggle('books')">
-    📚好きな本
-    <div id="books" class="content">
-        谷川俊太郎のからだに従う
-    </div>
-</div>
 
 
 
@@ -125,36 +119,6 @@ function toggle(id) {
 </script>
 
 
-
-<p id="text" onclick="toggleText()">
-    🤐けいちゃんの秘密の知恵袋🤐
-</p>
-
-<script>
-let opened = false;
-
-function toggleText() {
-    const t = document.getElementById("text");
-
-    if (opened) {
-        t.innerHTML = "🤐けいちゃんの秘密の知恵袋🤐";
-        opened = false;
-    } else {
-        t.innerHTML = "昆布を食べすぎると下痢するよ！";
-        opened = true;
-    }
-}
-
-function toggle(id) {
-    const element = document.getElementById(id);
-
-    if (element.style.display === "block") {
-        element.style.display = "none";
-    } else {
-        element.style.display = "block";
-    }
-}
-</script>
 
 </body>
 </html>
